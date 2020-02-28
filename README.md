@@ -1,6 +1,6 @@
 # vault-dev-demo
 
-This repo is for other people to get a jumpstart into playing around in [Hashicorp Vault](https://www.vaultproject.io/). 
+This repo is for other people at work to get a jumpstart into playing around in [Hashicorp Vault](https://www.vaultproject.io/). 
 
 This demo was made in a ubuntu environment, but should work in most other nix distros. 
 
@@ -38,7 +38,28 @@ VAULT_DEV_ROOT_TOKEN_ID: root
 Current Vault Server PID: 12294
 ```
 
-At this point, all the logs created by the vault binary will be redirected to the "logfile.log", and everything you need should be returned in the stdout. Now, at this point, there should be a server listening on http://127.0.0.1:7200. Now jump on over to [some](https://learn.hashicorp.com/vault/getting-started/first-secret) of the [tutorials](https://learn.hashicorp.com/vault/getting-started/dynamic-secrets) and keep some secrets!
+At this point, all the logs created by the vault binary will be redirected to the "logfile.log", and everything you need should be returned in the stdout. Now, at this point, there should be a server listening on http://127.0.0.1:7200. 
+
+Since we updated your environment's PATH, you should be able to utilize "vault" straight from your console. Confirm everything is running by running ["vault status"](https://www.vaultproject.io/docs/commands/status/). What you are looking for is "Initialized=true" and "Sealed=false" in order to proceed.
+
+```sh
+$ vault status
+Key             Value
+---             -----
+Seal Type       shamir
+Initialized     true
+Sealed          false
+Total Shares    1
+Threshold       1
+Version         1.3.2
+Cluster Name    vault-cluster-fefbd7e2
+Cluster ID      d09f2578-85a3-0e58-086f-93bc1a123118
+HA Enabled      false
+```
+
+Now jump on over to [some](https://learn.hashicorp.com/vault/getting-started/first-secret) of the [tutorials](https://learn.hashicorp.com/vault/getting-started/dynamic-secrets) and keep some secrets! Feel free to utilize the REST web server, the "vault" cli, or even the web interface at http://127.0.0.1:7200/ui
+
+## When you're finished
 
 If you want to kill the service, simply utilize the returned PID from the original output:
 
