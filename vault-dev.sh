@@ -3,7 +3,7 @@
 rm -rf logfile.log
 mkdir -p plugins
 
-./vault server -dev -dev-listen-address=127.0.0.1:7200 -dev-root-token-id="root" -log-level="info" -dev-plugin-dir="plugins" &>> logfile.log &
+./vault server -dev -dev-listen-address=0.0.0.0:7200 -dev-root-token-id="root" -log-level="info" -dev-plugin-dir="plugins" &>> logfile.log &
 
 source /etc/environment
 export VAULT_ADDR=http://127.0.0.1:7200
