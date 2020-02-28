@@ -38,7 +38,7 @@ VAULT_DEV_ROOT_TOKEN_ID: root
 Current Vault Server PID: 12294
 ```
 
-At this point, all the logs created by the vault binary will be redirected to the "logfile.log", and everything you need should be returned in the stdout. Now, at this point, there should be a server listening on http://127.0.0.1:7200. 
+At this point, all the logs created by the vault binary will be redirected to the "logfile.log", and everything you need should be returned in the stdout. Now there should be a server listening on http://127.0.0.1:7200. 
 
 Since we updated your environment's PATH, you should be able to utilize "vault" straight from your console. Confirm everything is running by running ["vault status"](https://www.vaultproject.io/docs/commands/status/). What you are looking for is "Initialized=true" and "Sealed=false" in order to proceed.
 
